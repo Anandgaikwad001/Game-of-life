@@ -10,6 +10,5 @@ Rules:
 3. Any live cell with two or three live neighbors lives, unchanged, to the next generation.
 4. Any dead cell with exactly three live neighbors comes to life.
 ---------------------------------------------------------------------
-Birth rule: 3 people needed to give birth; they have to be of mixed sexes; the sex of the child is the weaker sex (2A+B would give a birth to a B)
-Overcrowding rule: If you have 4 or more neighbors, you die.
+
 
