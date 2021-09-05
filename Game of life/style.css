@@ -1,0 +1,29 @@
+.box {
+    position: absolute;
+    right: 5%;
+    top: 0;
+}
+
+.play-button {
+    width: 100px;
+    height: 40px;
+    background-color: green;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    border: none;
+}
+
+.clear-button {
+    width: 100px;
+    height: 40px;
+    background-color: orangered;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    border: none;
+}
