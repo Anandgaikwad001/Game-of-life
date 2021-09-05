@@ -1,8 +1,8 @@
-let rows = 30,
-    cols = 40;
+// global varibles
+let rows = 30,cols = 40;
 let grid = createGrid();
 let play = false;
-
+// global variable
 function createGrid() {
     let result = [];
     for (let i = 0; i < rows; i++) {
@@ -17,9 +17,10 @@ function createGrid() {
 
 /*
 rules:
-Any live cell with two or three live neighbours survives.
-Any dead cell with three live neighbours becomes a live cell.
-All other live cells die in the next generation. Similarly, all other dead cells stay dead.
+1. Any live cell with fewer than two live neighbors dies, as if by loneliness.
+2. Any live cell with more than three live neighbors dies, as if by overcrowding.
+3. Any live cell with two or three live neighbors lives, unchanged, to the next generation.
+4. Any dead cell with exactly three live neighbors comes to life.
 */
 function nextGeneration() {
     let newGrid = createGrid();
@@ -64,14 +65,14 @@ function setup() {
     frameRate(2);
 }
 
-// Called over and over
+// Called over and over 
 function draw() {
     background(255);
     // Display the grid
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
             if (grid[i][j]) {
-                fill(0);
+                fill(0);//
                 rect(j / cols * width, i / rows * height, width / cols, height / rows);
             }
         }
@@ -91,7 +92,7 @@ function draw() {
         nextGeneration();
     }
 }
-
+// take input form user
 function mouseClicked() {
     let row = Math.floor(mouseY / height * rows);
     let col = Math.floor(mouseX / width * cols);
@@ -99,7 +100,7 @@ function mouseClicked() {
         grid[row][col] = !grid[row][col];
     }
 }
-
+// start and stop the intration of cells
 let playButton = document.querySelector(".play-button");
 playButton.addEventListener("click", function() {
     play = !play;
@@ -109,6 +110,7 @@ playButton.addEventListener("click", function() {
         playButton.textContent = "Play";
     }
 });
+// clear cells
 let clearButton = document.querySelector(".clear-button");
 clearButton.addEventListener("click", function() {
     grid = createGrid();
